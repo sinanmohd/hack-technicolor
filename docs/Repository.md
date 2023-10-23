@@ -70,6 +70,12 @@ You can also run
 strings /etc/cwmpd.db
 ```
 
+You can also use sqlite, which yields a more direct result. but since technicolor don't ship sqlite binary you'll have to copy /etc/cwmpd.db to another machine
+
+```bash
+sqlite3 cwmpd.db "select value from tidkv where key = 'URL';"
+```
+
 Which may yield some firmware URL's your Gateway received as automatic update.
 
 ### Make a raw device dump
